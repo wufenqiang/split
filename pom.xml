@@ -87,6 +87,22 @@
                     </args>
                 </configuration>
             </plugin>
+
+            <!--注入MANIFEST.MF配置属性-->
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-jar-plugin</artifactId>-->
+            <!--<configuration>-->
+            <!--<archive>-->
+            <!--<manifest>-->
+            <!--<addClasspath>true</addClasspath>-->
+            <!--&lt;!&ndash;<classpathPrefix>libs/</classpathPrefix>&ndash;&gt;-->
+            <!--&lt;!&ndash;<mainClass>com.weather.bigdata.it.test</mainClass>&ndash;&gt;-->
+            <!--</manifest>-->
+            <!--</archive>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+
             <!--<plugin>-->
                 <!--<groupId>org.apache.maven.plugins</groupId>-->
                 <!--<artifactId>maven-eclipse-plugin</artifactId>-->
