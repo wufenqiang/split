@@ -1,7 +1,11 @@
 package com.weather.bigdata.it.spark.platform.split
 
+import java.net.URI
+
 import com.alibaba.fastjson.JSONObject
+import com.weather.bigdata.it.utils.hdfsUtil.HDFSConfUtil
 import com.weather.bigdata.it.utils.operation.JsonOperation
+import org.apache.hadoop.fs.Path
 
 object Analysis {
   private val idNameKey=Constant.idNameKey
@@ -36,5 +40,18 @@ object Analysis {
     val (latBegin, latEnd, latStep) = (JSONPro.getString(this.lat_BeginKey).toDouble, JSONPro.getString(this.lat_EndKey).toDouble, JSONPro.getString(this.lat_StepKey).toDouble)
     val (lonBegin, lonEnd, lonStep) = (JSONPro.getString(this.lon_BeginKey).toDouble, JSONPro.getString(this.lon_EndKey).toDouble, JSONPro.getString(this.lon_StepKey).toDouble)
     (idName, timeBegin, timeEnd, timeStep, heightBegin, heightEnd, heightStep, latBegin, latEnd, latStep, lonBegin, lonEnd, lonStep)
+  }
+
+  def getRegion(splitFile:String): String ={
+    val uri = URI.create(splitFile)
+    val pathName=new Path(uri)
+    val kkk={
+      if(HDFSConfUtil.isLocal(splitFile)){
+        pathName.getParent.getName
+      }else{
+        pathName.getName
+      }
+    }
+    kkk.split("\\.").head
   }
 }

@@ -2,14 +2,29 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.weather.bigdata.it.spark.platform</groupId>
     <artifactId>split</artifactId>
-    <version>0.0.1-felix</version>
+    <!--<version>0.0.1-felix</version>-->
+    <version>0.0.1-SNAPSHOT</version>
     <inceptionYear>2008</inceptionYear>
     <properties>
         <scala.version>2.11.8</scala.version>
         <!--<java.version>1.8</java.version>-->
         <fast.json.version>1.2.20</fast.json.version>
-        <felixfun.version>0.0.1-felix</felixfun.version>
+        <!--<felixfun.version>0.0.1-felix</felixfun.version>-->
+        <felixfun.version>0.0.1-SNAPSHOT</felixfun.version>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>internal</id>
+            <name>Internal Release Repository</name>
+            <url>http://220.243.129.233:9090/archiva/repository/internal/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Internal Snapshot Repository</name>
+            <url>http://220.243.129.233:9090/archiva/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <repositories>
         <repository>
